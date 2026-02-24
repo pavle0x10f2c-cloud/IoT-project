@@ -1,0 +1,4 @@
+opencv-python
+mediapipe==0.10.18
+numpy<2
+python-dotenv

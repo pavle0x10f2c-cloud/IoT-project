@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  hand-led-controller:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    devices:
+      - /dev/video0:/dev/video0
+    network_mode: host   # required to reach ESP on local network
