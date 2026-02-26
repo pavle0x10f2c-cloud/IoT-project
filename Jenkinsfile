@@ -19,6 +19,7 @@ pipeline {
                 retry(3) {
                     sh 'docker compose build'
                 }
+            }
         }
 
         stage('Run') {
