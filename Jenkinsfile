@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+
+    environment {
+        DISPLAY = ':0'
+    }
+    
     stages {
         stage('Pull') {
             steps {
@@ -11,8 +16,9 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker compose build'
-            }
+                retry(3) {
+                    sh 'docker compose build'
+                }
         }
 
         stage('Run') {
