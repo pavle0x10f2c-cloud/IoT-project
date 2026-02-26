@@ -2,6 +2,9 @@
 
 Control an LED strip with your hand using a webcam — no touch required. Hover your index finger over the circles on screen to set the brightness level, which gets sent to an ESP32 over UDP.
 
+## Demo
+
+[Watch demo](https://youtu.be/6iK_UHYUhuM)
 ## Requirements
 
 - Linux + webcam
@@ -17,7 +20,9 @@ pip3 install -r requirements.txt --break-system-packages
 cd app
 python3 main.py
 ```
+## Wiring
 
+![Circuit diagram](docs/Circuit.png)
 ## Controls
 
 | Key | Action |
