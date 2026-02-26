@@ -28,9 +28,11 @@ pipeline {
         }
 
         stage('Run') {
+            steps {
             withCredentials([file(credentialsId: 'iot-env', variable: 'ENV_FILE')]) {
                 sh 'cp $ENV_FILE .env'
                 sh 'docker compose up -d'
+                }
             }
         }
     }
